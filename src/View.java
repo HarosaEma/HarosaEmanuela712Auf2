@@ -199,8 +199,11 @@ public class View {
                     getOrder();
                     break;
                 case 9:
+                    sortOrders();
+                case 10:
                     System.out.println(cntr);
                     break;
+
                 default:
                     break;
             }
