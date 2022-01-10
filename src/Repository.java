@@ -23,6 +23,13 @@ public class Repository {
         return productList.get(i);
     }
 
+    /**
+     *
+     * @param name
+     * @return
+     * @throws Exception
+     */
+
     public Product getProduct(String name) throws Exception {
         for(int i = 0 ; i < productList.size() ; i++){
             if(productList.get(i).name.equals(name)){
@@ -33,6 +40,11 @@ public class Repository {
         throw new Exception("Product doesnt exist");
     }
 
+    /**
+     *
+     * @param i
+     * @return
+     */
     public Orders getOrder(int i){
         return ordersList.get(i);
     }
@@ -42,6 +54,7 @@ public class Repository {
      * @param orderNumber
      * @return
      */
+
     public Orders getOrderByNumber(int orderNumber){
         for(int i = 0 ; i < ordersList.size() ; i++){
             if(ordersList.get(i).orderNumber == orderNumber){
@@ -52,10 +65,6 @@ public class Repository {
         return null;
     }
 
-    /**
-     *
-     * @param i
-     */
     public void removeProductByIndex(int i){
         productList.remove(i);
     }
@@ -93,7 +102,6 @@ public class Repository {
      * @param name
      * @param newPrice
      */
-
     public void updateProductPrice(String name, int newPrice){
         try {
             getProduct(name).setPrice(newPrice);
@@ -120,6 +128,11 @@ public class Repository {
         return message;
     }
 
+    /**
+     *
+     * @param orderNumber
+     */
+
     public void removeOrder(int orderNumber) {
         for(int i = 0 ; i < ordersList.size() ; i++){
             if(ordersList.get(i).orderNumber == orderNumber){
@@ -129,6 +142,12 @@ public class Repository {
         }
     }
 
+    /**
+     *
+     * @param orderNumber
+     * @param address
+     */
+
     public void updateOrderAddress(int orderNumber, String address) {
         try {
             getOrderByNumber(orderNumber).setAddress(address);
@@ -136,5 +155,9 @@ public class Repository {
         catch (Exception e){
             System.out.println(e.getMessage());
         }
+    }
+
+    public List<Orders> getAllOrders() {
+        return ordersList;
     }
 }

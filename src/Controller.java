@@ -54,4 +54,7 @@ public class Controller {
     }
 
 
+    public List<Orders> getAllOrders() {
+        return repository.getAllOrders();
+    }
 }

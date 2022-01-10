@@ -40,6 +40,15 @@ public class Orders {
         return productList.get(n);
     }
 
+    public int getTotalPrice(){
+        int sum = 0;
+        for (Product product : productList) {
+            sum += product.price;
+        }
+
+        return sum;
+    }
+
     @Override
     public String toString(){
         String message = "Order number " + Integer.toString(orderNumber) + " at address " + address + " with products: ";

@@ -20,11 +20,11 @@ public class View {
         message += "6). Delete a order by order number.\n";
         message += "7). Update a order's address.\n";
         message += "8). Get a order by order number.\n";
-        message += "9). Get all repo.\n";
+        message += "9). Sort orders by total price.\n";
+        message += "10). Get all repo.\n";
 
         System.out.println(message);
     }
-
 
     private int getOption(){
         Scanner keyboard = new Scanner(System.in);
@@ -35,15 +35,19 @@ public class View {
             System.out.print("Enter the option: ");
             myint = keyboard.nextInt();
 
-            if(myint <= 0 || myint >= 10){
+            if(myint <= 0 || myint >= 11){
                 myint = -1;
-                System.out.println("Option invalid! Option should be between 0 and 9");
+                System.out.println("Option invalid! Option should be between 0 and 10");
             }
         }
 
         return myint;
     }
-    
+
+    private void sortOrders(){
+        Service service = new Service();
+        System.out.println(service.sortOrdersByTotalPrice(cntr.getAllOrders()));
+    }
 
     private void addProduct(){
         Scanner keyboard = new Scanner(System.in);
