@@ -37,6 +37,11 @@ public class Repository {
         return ordersList.get(i);
     }
 
+    /**
+     *
+     * @param orderNumber
+     * @return
+     */
     public Orders getOrderByNumber(int orderNumber){
         for(int i = 0 ; i < ordersList.size() ; i++){
             if(ordersList.get(i).orderNumber == orderNumber){
@@ -47,9 +52,18 @@ public class Repository {
         return null;
     }
 
+    /**
+     *
+     * @param i
+     */
     public void removeProductByIndex(int i){
         productList.remove(i);
     }
+
+    /**
+     *
+     * @param name
+     */
 
     public void removeProductByName(String name){
         for(int i = 0 ; i < productList.size() ; i++){
@@ -60,6 +74,11 @@ public class Repository {
         }
     }
 
+    /**
+     *
+     * @param price
+     */
+
     public void removeProductsByPrice(int price){
         for(int i = 0 ; i < productList.size() ; i++){
             if(productList.get(i).price == price){
@@ -68,6 +87,12 @@ public class Repository {
             }
         }
     }
+
+    /**
+     *
+     * @param name
+     * @param newPrice
+     */
 
     public void updateProductPrice(String name, int newPrice){
         try {

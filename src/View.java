@@ -25,6 +25,7 @@ public class View {
         System.out.println(message);
     }
 
+
     private int getOption(){
         Scanner keyboard = new Scanner(System.in);
 
@@ -42,6 +43,7 @@ public class View {
 
         return myint;
     }
+    
 
     private void addProduct(){
         Scanner keyboard = new Scanner(System.in);
